@@ -10,7 +10,7 @@
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
+.editor-wrapper [data-icon]:before {
 	font-family: 'editor-icomoon';
 	content: attr(data-icon);
 	speak: none;
@@ -27,7 +27,23 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-bold, .icon-italic, .icon-quote, .icon-unordered-list, .icon-ordered-list, .icon-link, .icon-image, .icon-play, .icon-music, .icon-contract, .icon-fullscreen, .icon-question, .icon-info, .icon-undo, .icon-redo, .icon-code, .icon-preview {
+.editor-wrapper .icon-bold,
+.editor-wrapper .icon-italic,
+.editor-wrapper .icon-quote,
+.editor-wrapper .icon-unordered-list,
+.editor-wrapper .icon-ordered-list,
+.editor-wrapper .icon-link,
+.editor-wrapper .icon-image,
+.editor-wrapper .icon-play,
+.editor-wrapper .icon-music,
+.editor-wrapper .icon-contract,
+.editor-wrapper .icon-fullscreen,
+.editor-wrapper .icon-question,
+.editor-wrapper .icon-info,
+.editor-wrapper .icon-undo,
+.editor-wrapper .icon-redo,
+.editor-wrapper .icon-code,
+.editor-wrapper .icon-preview {
 	font-family: 'editor-icomoon';
 	speak: none;
 	font-style: normal;
@@ -37,54 +53,54 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-bold:before {
+.editor-wrapper .icon-bold:before {
 	content: "\e000";
 }
-.icon-italic:before {
+.editor-wrapper .icon-italic:before {
 	content: "\e001";
 }
-.icon-quote:before {
+.editor-wrapper .icon-quote:before {
 	content: "\e003";
 }
-.icon-unordered-list:before {
+.editor-wrapper .icon-unordered-list:before {
 	content: "\e004";
 }
-.icon-ordered-list:before {
+.editor-wrapper .icon-ordered-list:before {
 	content: "\e005";
 }
-.icon-link:before {
+.editor-wrapper .icon-link:before {
 	content: "\e006";
 }
-.icon-image:before {
+.editor-wrapper .icon-image:before {
 	content: "\e007";
 }
-.icon-play:before {
+.editor-wrapper .icon-play:before {
 	content: "\e008";
 }
-.icon-music:before {
+.editor-wrapper .icon-music:before {
 	content: "\e009";
 }
-.icon-contract:before {
+.editor-wrapper .icon-contract:before {
 	content: "\e00a";
 }
-.icon-fullscreen:before {
+.editor-wrapper .icon-fullscreen:before {
 	content: "\e00b";
 }
-.icon-question:before {
+.editor-wrapper .icon-question:before {
 	content: "\e00c";
 }
-.icon-info:before {
+.editor-wrapper .icon-info:before {
 	content: "\e00d";
 }
-.icon-undo:before {
+.editor-wrapper .icon-undo:before {
 	content: "\e00e";
 }
-.icon-redo:before {
+.editor-wrapper .icon-redo:before {
 	content: "\e00f";
 }
-.icon-code:before {
+.editor-wrapper .icon-code:before {
 	content: "\e011";
 }
-.icon-preview:before {
+.editor-wrapper .icon-preview:before {
 	content: "\e002";
 }
