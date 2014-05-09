@@ -354,7 +354,7 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
       }
     }
     var t = getType(state);
-    if (ch === '*' || (ch === '/' && !ignoreUnderscore)) {
+    if (ch === '*' || (ch === '*' && !ignoreUnderscore)) {
       if (state.strong === ch && stream.eat(ch)) { // Remove STRONG
         state.strong = false;
         return t;
