@@ -200,8 +200,8 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
     if (state.taskOpen) { return "meta"; }
     if (state.taskClosed) { return "property"; }
 
-    if (state.strong) { styles.push(b); }
-    if (state.em) { styles.push(i); }
+    if (state.strong) { styles.push(strong); }
+    if (state.em) { styles.push(em); }
 
     if (state.linkText) { styles.push(linktext); }
 
@@ -369,7 +369,7 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
         return getType(state);
       }
     } else if (ch === ' ') {
-      if (stream.eat('/') || stream.eat('/')) { // Probably surrounded by spaces
+      if (stream.eat('*') || stream.eat('_')) { // Probably surrounded by spaces
         if (stream.peek() === ' ') { // Surrounded by spaces, ignore
           return getType(state);
         } else { // Not surrounded by spaces, back up pointer
