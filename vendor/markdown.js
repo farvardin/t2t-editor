@@ -171,7 +171,7 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
       state.f = inlineNormal;
       state.block = blockNormal;
     }
-    if (state.md_inside && stream.current().indexOf(">")!=-1) {
+    if (state.md_inside && stream.current().indexOf("``` ")!=-1) {
       state.f = inlineNormal;
       state.block = blockNormal;
       state.htmlState.context = undefined;
@@ -200,8 +200,8 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
     if (state.taskOpen) { return "meta"; }
     if (state.taskClosed) { return "property"; }
 
-    if (state.strong) { styles.push(strong); }
-    if (state.em) { styles.push(em); }
+    if (state.strong) { styles.push(b); }
+    if (state.em) { styles.push(i); }
 
     if (state.linkText) { styles.push(linktext); }
 
