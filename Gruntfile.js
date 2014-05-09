@@ -87,8 +87,10 @@ module.exports = function(grunt) {
     data += grunt.file.read('editor.css');
     grunt.file.write('build/editor.css', data);
     grunt.file.copy('docs/index.html', 'build/index.html');
-    grunt.file.copy('docs/markdown.md', 'build/markdown.md');
-    grunt.file.copy('docs/markdown.html', 'build/markdown.html');
+    //grunt.file.copy('docs/markdown.md', 'build/markdown.md');
+    grunt.file.copy('vendor/zepto.min.js', 'build/zepto.min.js');
+    grunt.file.copy('docs/sample.t2t', 'build/sample.t2t');
+    //grunt.file.copy('docs/markdown.html', 'build/markdown.html');
     grunt.file.copy('docs/yue.css', 'build/yue.css');
     grunt.file.copy('docs/marked.js', 'build/marked.js');
   });
