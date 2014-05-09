@@ -67,7 +67,7 @@ function getState(cm, pos) {
   var ret = {}, data, text;
   for (var i = 0; i < types.length; i++) {
     data = types[i];
-    if (data === 'strong') {
+    if (data === 'b') {
       ret.bold = true;
     } else if (data === 'variable-2') {
       text = cm.getLine(pos.line);
@@ -78,7 +78,7 @@ function getState(cm, pos) {
       }
     } else if (data === 'atom') {
       ret.quote = true;
-    } else if (data === 'em') {
+    } else if (data === 'i') {
       ret.italic = true;
     }
   }
@@ -174,8 +174,8 @@ function toggleItalic(editor) {
     start = text.slice(0, startPoint.ch);
     end = text.slice(startPoint.ch);
 
-    start = start.replace(/^(.*)?(\/\/)(\S+.*)?$/, '$1$3');
-    end = end.replace(/^(.*\S+)?(\/\/)(\s+.*)?$/, '$1$3');
+    start = start.replace(/^(.*)?(\/){2}(\S+.*)?$/, '$1$3');
+    end = end.replace(/^(.*\S+)?(\/){2}(\s+.*)?$/, '$1$3');
     startPoint.ch -= 2;
     endPoint.ch -= 2;
     cm.setLine(startPoint.line, start + end);
@@ -314,14 +314,14 @@ function _toggleLine(cm, name) {
   var startPoint = cm.getCursor('start');
   var endPoint = cm.getCursor('end');
   var repl = {
-    quote: /^(\s*)\>\s+/,
-    'unordered-list': /^(\s*)(\*|\-|\+)\s+/,
-    'ordered-list': /^(\s*)\d+\.\s+/
+    quote: /^(\s*)``` \s+/,
+    'unordered-list': /^(\s*)(- )\s+/,
+    'ordered-list': /^(\s*)(\+ )\s+/
   };
   var map = {
-    quote: '> ',
-    'unordered-list': '* ',
-    'ordered-list': '1. '
+    quote: '``` ',
+    'unordered-list': '- ',
+    'ordered-list': '+ '
   };
   for (var i = startPoint.line; i <= endPoint.line; i++) {
     (function(i) {
