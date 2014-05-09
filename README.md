@@ -1,10 +1,12 @@
 # Editor
 
-> A markdown editor you really want.
+> A txt2tags editor you really want.
+
+Forked from http://lab.lepture.com/editor/markdown / https://github.com/lepture/editor/
 
 ## Overview
 
-Editor is not a WYSIWYG editor, it is a plain text markdown editor. Thanks for the great project [codemirror](http://codemirror.net/), without which editor can never be created.
+Editor is not a WYSIWYG editor, it is a plain text txt2tags editor. Thanks for the great project [codemirror](http://codemirror.net/), without which editor can never be created.
 
 ## Basic Usage
 
