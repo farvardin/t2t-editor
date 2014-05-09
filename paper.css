@@ -68,9 +68,11 @@
 .cm-negative {color: #d44;}
 .cm-positive {color: #292;}
 .cm-header, .cm-strong {font-weight: bold;}
-.cm-header, .cm-b {font-weight: bold;}
 .cm-em {font-style: italic;}
+<<<<<<< HEAD
 /*.cm-i {font-style: italic;}*/
+=======
+>>>>>>> 05e6cef9c17484d2dbbedc30f2e1205a53880cac
 .cm-link {text-decoration: underline;}
 
 .cm-invalidchar {color: #f00;}
