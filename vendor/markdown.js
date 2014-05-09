@@ -67,8 +67,8 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
   ,   linkemail = 'link'
   ,   linktext = 'link'
   ,   linkhref = 'string'
-  ,   em       = 'i'
-  ,   strong   = 'b';
+  ,   em       = 'em'
+  ,   strong   = 'strong';
 
   var hrRE = /^([*\-=_])(?:\s*\1){2,}\s*$/
   ,   ulRE = /^[*\-+]\s+/
