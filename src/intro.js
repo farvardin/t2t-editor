@@ -224,7 +224,7 @@ function toggleOrderedList(editor) {
 function drawLink(editor) {
   var cm = editor.codemirror;
   var stat = getState(cm);
-  _replaceSelection(cm, stat.link, '[my description ', ' http://]');
+  _replaceSelection(cm, stat.link, '[', ' http://]');
 }
 
 

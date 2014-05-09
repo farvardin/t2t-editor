@@ -133,13 +133,13 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
       return code;
     } else if (stream.eatSpace()) {
       return null;
-    } else if (stream.peek() === '#' || (state.prevLineHasContent && stream.match(headerRE)) ) {
+    } else if (stream.peek() === '=' || (state.prevLineHasContent && stream.match(headerRE)) ) {
       state.header = true;
-    } else if (stream.eat('>')) {
+    } else if (stream.eat('```')) {
       state.indentation++;
       state.quote = 1;
       stream.eatSpace();
-      while (stream.eat('>')) {
+      while (stream.eat('```')) {
         stream.eatSpace();
         state.quote++;
       }
