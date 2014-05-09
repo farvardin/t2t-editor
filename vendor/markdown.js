@@ -68,6 +68,7 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
   ,   linktext = 'link'
   ,   linkhref = 'string'
   ,   em       = 'em'
+  ,   underline       = 'u'
   ,   strong   = 'strong';
 
   var hrRE = /^([*\-=_])(?:\s*\1){2,}\s*$/

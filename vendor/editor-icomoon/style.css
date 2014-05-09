@@ -29,6 +29,8 @@ you can use the generic selector below, but it's slower:
 */
 .editor-toolbar .icon-bold,
 .editor-toolbar .icon-italic,
+.editor-toolbar .icon-underline,
+.editor-toolbar .icon-strikethrough,
 .editor-toolbar .icon-quote,
 .editor-toolbar .icon-unordered-list,
 .editor-toolbar .icon-ordered-list,
@@ -52,6 +54,51 @@ you can use the generic selector below, but it's slower:
 	text-transform: none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
+}
+
+.editor-toolbar .icon-h1:before {
+	content: "\f0fd";
+}
+.editor-toolbar .icon-h2:before {
+	content: "\f0fe";
+}
+.editor-toolbar .icon-h3:before {
+	content: "\f0ff";
+}
+.editor-toolbar .icon-h4:before {
+	content: "\f100";
+}
+.editor-toolbar .icon-h5:before {
+	content: "\f101";
+}
+
+.editor-toolbar .icon-home:before {
+	content: "\e600";
+}
+
+.editor-toolbar .icon-pencil:before {
+	content: "\e601";
+}
+.editor-toolbar .icon-quill:before {
+	content: "\e602";
+}
+.editor-toolbar .icon-pen:before {
+	content: "\e603";
+}
+.editor-toolbar .icon-qrcode:before {
+	content: "\e604";
+}
+.editor-toolbar .icon-underline:before {
+	content: "\e605";
+}
+.editor-toolbar .icon-strikethrough:before {
+	content: "\e606";
+}
+.editor-toolbar .icon-table:before {
+	content: "\e607";
+}
+.editor-toolbar .icon-tux:before {
+	content: "\e608";
 }
 .editor-toolbar .icon-bold:before {
 	content: "\e000";

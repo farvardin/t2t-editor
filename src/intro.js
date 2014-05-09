@@ -1,3 +1,4 @@
+/* code mirror stuffs */
 
 var isMac = /Mac/.test(navigator.platform);
 
@@ -120,6 +121,73 @@ function toggleFullScreen(editor) {
   }
 }
 
+/**
+ * Action for toggling H2.
+ */
+function toggleH2(editor) {
+  var cm = editor.codemirror;
+  var stat = getState(cm);
+
+  var text;
+  var start = '== ';
+  var end = ' ==';
+
+  var startPoint = cm.getCursor('start');
+  var endPoint = cm.getCursor('end');
+  if (stat.header) {
+    text = cm.getLine(startPoint.line);
+    start = text.slice(0, startPoint.ch);
+    end = text.slice(startPoint.ch);
+
+    start = start.replace(/^(.*)?(\=){2}(\S+.*)?$/, '$1$3');
+    end = end.replace(/^(.*\S+)?(\=){2}(\s+.*)?$/, '$1$3');
+    startPoint.ch -= 3;
+    endPoint.ch -= 3;
+    cm.setLine(startPoint.line, start + end);
+  } else {
+    text = cm.getSelection();
+    cm.replaceSelection(start + text + end);
+
+    startPoint.ch += 3;
+    endPoint.ch += 3;
+  }
+  cm.setSelection(startPoint, endPoint);
+  cm.focus();
+}
+
+/**
+ * Action for toggling H3.
+ */
+function toggleH3(editor) {
+  var cm = editor.codemirror;
+  var stat = getState(cm);
+
+  var text;
+  var start = '=== ';
+  var end = ' ===';
+
+  var startPoint = cm.getCursor('start');
+  var endPoint = cm.getCursor('end');
+  if (stat.header) {
+    text = cm.getLine(startPoint.line);
+    start = text.slice(0, startPoint.ch);
+    end = text.slice(startPoint.ch);
+
+    start = start.replace(/^(.*)?(\=){3}(\S+.*)?$/, '$1$3');
+    end = end.replace(/^(.*\S+)?(\=){3}(\s+.*)?$/, '$1$3');
+    startPoint.ch -= 4;
+    endPoint.ch -= 4;
+    cm.setLine(startPoint.line, start + end);
+  } else {
+    text = cm.getSelection();
+    cm.replaceSelection(start + text + end);
+
+    startPoint.ch += 4;
+    endPoint.ch += 4;
+  }
+  cm.setSelection(startPoint, endPoint);
+  cm.focus();
+}
 
 /**
  * Action for toggling bold.
@@ -176,6 +244,74 @@ function toggleItalic(editor) {
 
     start = start.replace(/^(.*)?(\/){2}(\S+.*)?$/, '$1$3');
     end = end.replace(/^(.*\S+)?(\/){2}(\s+.*)?$/, '$1$3');
+    startPoint.ch -= 2;
+    endPoint.ch -= 2;
+    cm.setLine(startPoint.line, start + end);
+  } else {
+    text = cm.getSelection();
+    cm.replaceSelection(start + text + end);
+
+    startPoint.ch += 2;
+    endPoint.ch += 2;
+  }
+  cm.setSelection(startPoint, endPoint);
+  cm.focus();
+}
+
+/**
+ * Action for toggling underline.
+ */
+function toggleUnderline(editor) {
+  var cm = editor.codemirror;
+  var stat = getState(cm);
+
+  var text;
+  var start = '__';
+  var end = '__';
+
+  var startPoint = cm.getCursor('start');
+  var endPoint = cm.getCursor('end');
+  if (stat.bold) {
+    text = cm.getLine(startPoint.line);
+    start = text.slice(0, startPoint.ch);
+    end = text.slice(startPoint.ch);
+
+    start = start.replace(/^(.*)?(\_){2}(\S+.*)?$/, '$1$3');
+    end = end.replace(/^(.*\S+)?(\_){2}(\s+.*)?$/, '$1$3');
+    startPoint.ch -= 2;
+    endPoint.ch -= 2;
+    cm.setLine(startPoint.line, start + end);
+  } else {
+    text = cm.getSelection();
+    cm.replaceSelection(start + text + end);
+
+    startPoint.ch += 2;
+    endPoint.ch += 2;
+  }
+  cm.setSelection(startPoint, endPoint);
+  cm.focus();
+}
+
+/**
+ * Action for toggling Strikethrough.
+ */
+function toggleStrikethrough(editor) {
+  var cm = editor.codemirror;
+  var stat = getState(cm);
+
+  var text;
+  var start = '--';
+  var end = '--';
+
+  var startPoint = cm.getCursor('start');
+  var endPoint = cm.getCursor('end');
+  if (stat.bold) {
+    text = cm.getLine(startPoint.line);
+    start = text.slice(0, startPoint.ch);
+    end = text.slice(startPoint.ch);
+
+    start = start.replace(/^(.*)?(\-){2}(\S+.*)?$/, '$1$3');
+    end = end.replace(/^(.*\S+)?(\-){2}(\s+.*)?$/, '$1$3');
     startPoint.ch -= 2;
     endPoint.ch -= 2;
     cm.setLine(startPoint.line, start + end);

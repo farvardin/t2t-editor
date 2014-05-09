@@ -1,6 +1,11 @@
 var toolbar = [
+  {name: 'h2', action: toggleH2},
+  {name: 'h3', action: toggleH3},
+  '|',
   {name: 'bold', action: toggleBold},
   {name: 'italic', action: toggleItalic},
+  {name: 'underline', action: toggleUnderline},
+  {name: 'strikethrough', action: toggleStrikethrough},
   '|',
 
   {name: 'quote', action: toggleBlockquote},
