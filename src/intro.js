@@ -328,6 +328,40 @@ function toggleStrikethrough(editor) {
 
 
 /**
+ * Action for toggling code.
+ */
+function toggleCode(editor) {
+  var cm = editor.codemirror;
+  var stat = getState(cm);
+
+  var text;
+  var start = '``';
+  var end = '``';
+
+  var startPoint = cm.getCursor('start');
+  var endPoint = cm.getCursor('end');
+  if (stat.italic) {
+    text = cm.getLine(startPoint.line);
+    start = text.slice(0, startPoint.ch);
+    end = text.slice(startPoint.ch);
+
+    start = start.replace(/^(.*)?(`){2}(\S+.*)?$/, '$1$3');
+    end = end.replace(/^(.*\S+)?(`){2}(\s+.*)?$/, '$1$3');
+    startPoint.ch -= 2;
+    endPoint.ch -= 2;
+    cm.setLine(startPoint.line, start + end);
+  } else {
+    text = cm.getSelection();
+    cm.replaceSelection(start + text + end);
+
+    startPoint.ch += 2;
+    endPoint.ch += 2;
+  }
+  cm.setSelection(startPoint, endPoint);
+  cm.focus();
+}
+
+/**
  * Action for toggling blockquote.
  */
 function toggleBlockquote(editor) {

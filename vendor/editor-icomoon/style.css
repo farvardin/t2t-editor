@@ -27,6 +27,11 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
+.editor-toolbar .icon-h1,
+.editor-toolbar .icon-h2,
+.editor-toolbar .icon-h3,
+.editor-toolbar .icon-h4,
+.editor-toolbar .icon-h5,
 .editor-toolbar .icon-bold,
 .editor-toolbar .icon-italic,
 .editor-toolbar .icon-underline,
@@ -57,19 +62,19 @@ you can use the generic selector below, but it's slower:
 }
 
 .editor-toolbar .icon-h1:before {
-	content: "\f0fd";
+	content: "\e501";
 }
 .editor-toolbar .icon-h2:before {
-	content: "\f0fe";
+	content: "\e502";
 }
 .editor-toolbar .icon-h3:before {
-	content: "\f0ff";
+	content: "\e503";
 }
 .editor-toolbar .icon-h4:before {
-	content: "\f100";
+	content: "\e504";
 }
 .editor-toolbar .icon-h5:before {
-	content: "\f101";
+	content: "\e505";
 }
 
 .editor-toolbar .icon-home:before {

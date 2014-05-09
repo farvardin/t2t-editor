@@ -8,6 +8,7 @@ var toolbar = [
   {name: 'strikethrough', action: toggleStrikethrough},
   '|',
 
+  {name: 'code', action: toggleCode},
   {name: 'quote', action: toggleBlockquote},
   {name: 'unordered-list', action: toggleUnOrderedList},
   {name: 'ordered-list', action: toggleOrderedList},
